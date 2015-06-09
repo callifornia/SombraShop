@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	
+	<definition name="base.definition"
+		template="/WEB-INF/jsp/template.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/header.jsp" />
+		<put-attribute name="menu" value="" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/footer.jsp" />
+	</definition>
+
+	<definition name="home" extends="base.definition" >
+		<put-attribute name="title" value="Home page" />
+		<put-attribute name="body" value="/WEB-INF/jsp/home.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+	</definition>
+
+	<definition name="login" extends="base.definition">
+		<put-attribute name="title" value="Login page" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/login.jsp" />
+	</definition>
+	
+	<definition name="adminUserEdit" extends="base.definition">
+		<put-attribute name="title" value="Edit user" />
+		<put-attribute name="body" value="/WEB-INF/jsp/admin_user_edit.jsp" />
+	
+	</definition>
+	
+	<definition name="adminCitiesEdit" extends="base.definition">
+		<put-attribute name="title" value="Edit cities" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cities_edit.jsp" />
+	</definition>
+	
+	<definition name="userEdit" extends="base.definition">
+		<put-attribute name="title" value="Edit user" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user_edit.jsp" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/admin_menu.jsp" />
+	</definition>
+	
+	<definition name="userRegister" extends="base.definition">
+		<put-attribute name="title" value="User Registration" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/user_register.jsp" />
+	</definition>
+	
+	<definition name="viewLot" extends="base.definition">
+		<put-attribute name="title" value="View lot" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/lot.jsp" />
+	</definition>
+	
+	<definition name="createItem" extends="base.definition">
+		<put-attribute name="title" value="Create Item" />
+		<put-attribute name="body" value="/WEB-INF/jsp/create_item.jsp" />
+	</definition>
+	
+	<definition name="cart" extends="base.definition">
+		<put-attribute name="title" value="Create Item" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cart.jsp" />
+	</definition>
+	
+	<definition name="category" extends="base.definition">
+		<put-attribute name="title" value="Create Item" />
+		<put-attribute name="menu" value="/WEB-INF/jsp/menu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/category.jsp" />
+	</definition>
+	
+</tiles-definitions>
