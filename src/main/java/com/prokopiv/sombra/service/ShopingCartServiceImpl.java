@@ -1,5 +1,6 @@
 package com.prokopiv.sombra.service;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,16 +10,21 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
 
-import com.prokopiv.sombra.dao.Dao;
+import com.prokopiv.sombra.dao.ProductDao;
+import com.prokopiv.sombra.dao.ShopingDao;
 import com.prokopiv.sombra.model.Product;
 
 @Component
 @Scope(value = "session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class ShopingCartServiceImpl implements ShopingCartService {
+public class ShopingCartServiceImpl implements ShopingCartService, Serializable {
+	
+
+	private static final long serialVersionUID = 226603051652885383L;
 
 	private List<Product> productList = new ArrayList<Product>();
 
-	@Autowired Dao dao;
+	@Autowired ShopingDao shopingDao;
+	@Autowired ProductDao productDao;
 	
 	@Override
 	public boolean productExist(String id) {
@@ -30,13 +36,13 @@ public class ShopingCartServiceImpl implements ShopingCartService {
 	
 	@Override
 	public void checkout() {
-		dao.checkout(this);
+		shopingDao.checkout(this);
 		this.productList.clear();
 	}
 	
 	@Override
 	public void addProductToCart(String id) {
-		Product product = dao.getProduct(id);
+		Product product = productDao.getProduct(id);
 		productList.add(product);
 	}
 	

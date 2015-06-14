@@ -2,6 +2,8 @@ $(document).ready(function(){
 	$('#show').delay(5000).fadeOut(800);
 	var app = new Application();
 	app.loadMenu();
+	var referrer = document.referrer;
+
 	
 	$("#checkout").click(function(){
 		alert("Send to the db");
@@ -10,7 +12,8 @@ $(document).ready(function(){
 
 
 function send(data){
-	var url = location.protocol + '//' + location.host + "/sombra" + "/json/addToCart/" + data;
+	
+	var url = "http://" + $(location).attr('host') + "/sombra/json/addToCart/" + data;
 	$.getJSON(url);
 	hideElem(data);
 };
@@ -19,8 +22,8 @@ function hideElem(data){
 	$("#lot_"+data).hide();
 }
 
-function rem(data){
-	var url = location.protocol + '//' + location.host + "/sombra" + "/json/remove/" + data;
+function rem(data){	
+	var url = "http://" + $(location).attr('host') + "/sombra/json/remove/" + data;
 	$.getJSON(url, function(json){
 		if(json == 0){
 			location.reload();
@@ -32,11 +35,10 @@ function rem(data){
 
 function Application(){
 	this.loadMenu = function(){
-		var url = location.protocol + '//' + location.host + "/sombra/json/tree";
-		var urlMenu = location.protocol + '//' + location.host + "/sombra/category/";
+		var url = "http://" + $(location).attr('host') + "/sombra/json/tree";	
+		var urlMenu = "http://" + $(location).attr('host') + "/sombra/category/";
 		$.getJSON(url, function(json){
-			var data = json;
-			
+			var data = json;			
 			function parseMenu(ul, menu) {
 			    for (var i=0;i<menu.length;i++) {
 			        if (menu[i].childList!=null) {
