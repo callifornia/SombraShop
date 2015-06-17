@@ -23,8 +23,9 @@ public class JsonController {
 	@Autowired Search search;
 	@Autowired CategoryService categoryService;
 	
-	@RequestMapping(value = "json/tree", headers="Accept=application/json", method = RequestMethod.GET)
-	public @ResponseBody List<Category> getMainMenu(){
+	@ResponseBody
+	@RequestMapping(value = "json/tree", /*headers="Accept=application/json",*/ method = RequestMethod.GET)
+	public List<Category> getMainMenu(){
 		return categoryService.getSortCategoriesList();
 	}
 	
