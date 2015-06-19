@@ -41,7 +41,6 @@ public class LoginController {
 
 	@RequestMapping(value = "/403", method = RequestMethod.GET)
 	public String permition(ModelMap model){
-		System.out.println("You dont have permition");
 		return "redirect:login";
 	}
 }

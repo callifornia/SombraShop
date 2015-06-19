@@ -28,7 +28,6 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> getProductListByCategory(Pagination pagination, String id) {
 		String categoryIds = categoruService.getSubCategories(id);
-		System.out.println(categoryIds);
 		return productDao.getProductListByCategory(pagination, categoryIds);
 	}
 	

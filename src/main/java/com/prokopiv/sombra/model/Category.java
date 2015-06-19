@@ -9,7 +9,7 @@ public class Category {
 	private String name;
 	private String idParent;
 	private List<Category> childList = null;
-
+	
 	public Category() {
 		this.childList = new ArrayList<Category>();
 	}

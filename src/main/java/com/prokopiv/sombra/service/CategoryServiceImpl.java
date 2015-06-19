@@ -12,14 +12,13 @@ import com.prokopiv.sombra.model.Category;
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
-	@Autowired
-	CategoryDao categoryDao;
+	@Autowired CategoryDao categoryDao;
 
 	@Override
 	public List<Category> getCategoryList() {
 		return categoryDao.getCategoriesList();
 	}
-
+	
 	@Override
 	public String getSubCategories(String id) {
 		String result = null;
@@ -28,32 +27,31 @@ public class CategoryServiceImpl implements CategoryService {
 		for (Category cat : categoryTree) {
 			categoryHead = getSubCategoryHead(cat, id);
 			if(categoryHead != null){
-				break;
-			}
-		}
+				break; 
+			} 
+		} 
 		List<Category> subCategoryList = getSubCategoryList(categoryHead, new ArrayList<Category>());
 		result = getSubCategoryString(subCategoryList);
-		System.out.println(result);
 		return result;
 	}
 
 	@Override
 	public List<Category> getSortCategoriesList() {
-		List<Category> categoryList = getCategoryList();
+		List<Category> categoryList = new ArrayList<Category>(getCategoryList());
 		List<Category> resultList = new ArrayList<Category>();
 		List<String> idList = new ArrayList<String>();
 		for (int i = 0; i < categoryList.size(); i++) {
 			Category category = categoryList.get(i);
 			if (!check(idList, category.getId())) {
 				resultList.add(category);
-			}
+			} 
 			for (int j = i + 1; j < categoryList.size(); j++) {
 				if (category.getId().equals(categoryList.get(j).getIdParent())) {
 					category.getChildList().add(categoryList.get(j));
 					idList.add(categoryList.get(j).getId());
-				}
-			}
-		}
+				} 
+			} 
+		} 
 		return resultList;
 	}
 
