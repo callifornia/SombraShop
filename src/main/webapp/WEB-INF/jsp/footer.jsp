@@ -2,6 +2,6 @@
 <%@ include file="library.jsp"%>
 <footer>
 	<div class = "container footerWrap">
-		<p>© 2015 Developed by Grisha for Sombra corp. </p>
+		<p>© 2015 Web Store </p>
 	</div>
 </footer>

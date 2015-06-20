@@ -11,7 +11,7 @@
             http://www.springframework.org/schema/cache/spring-cache.xsd
             http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
 
-	<!-- Data Base Connection -->
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${driverClassName}" />
@@ -19,12 +19,13 @@
 		<property name="username" value="${username}" />
 		<property name="password" value="${password}" />
 	</bean>
-
-	<!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
-		<property name="driverClassName" value= "com.mysql.jdbc.Driver" /> <property 
-		name="url" value = "jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:${OPENSHIFT_MYSQL_DB_PORT}/sombra?characterEncoding=utf8" 
-		/> <property name="username" value = "${OPENSHIFT_MYSQL_DB_USERNAME}" /> 
-		<property name="password" value = "${OPENSHIFT_MYSQL_DB_PASSWORD}" /> </bean> -->
+<!-- Data Base Connection 
+	 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
+		<property name="driverClassName" value= "com.mysql.jdbc.Driver" /> 
+		<property name="url" value = "jdbc:mysql://${OPENSHIFT_MYSQL_DB_HOST}:${OPENSHIFT_MYSQL_DB_PORT}/sombra?characterEncoding=utf8" /> 
+		<property name="username" value = "${OPENSHIFT_MYSQL_DB_USERNAME}" /> 
+		<property name="password" value = "${OPENSHIFT_MYSQL_DB_PASSWORD}" /> 
+	</bean>-->
 
 	<!-- Read properties file -->
 	<bean id="propertyConfigurer"

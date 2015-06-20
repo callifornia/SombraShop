@@ -29,7 +29,7 @@ public class CategoryDaoImpl implements CategoryDao, InitializingBean {
 		initCategoryList();
 	}
 	
-	private void initCategoryList(){
+	private void initCategoryList() throws SQLException{
 		System.out.println("piupiu");
 		List<Category> categoryList = new ArrayList<Category>();
 		String sql = "SELECT id, name, parent_id FROM category";
@@ -45,6 +45,7 @@ public class CategoryDaoImpl implements CategoryDao, InitializingBean {
 			connection.close();
 		} catch(SQLException ex){
 			ex.printStackTrace();
+			throw new SQLException(ex);
 		}
 		this.categoriesList = categoryList;
 	}

@@ -130,7 +130,6 @@ public class ProductController {
 	public String home(Model model, RedirectAttributes redirect) {
 		pagination.setCurrentPage(1);
 		model.addAttribute("search", search);
-	categoryService.getCategoryList();
 		model.addAttribute("pagi", pagination);
 		model.addAttribute("product", productService.getProductsBySearch(search.getSearchRow(), pagination));
 		return "home";
