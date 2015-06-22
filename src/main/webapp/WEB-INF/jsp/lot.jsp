@@ -11,7 +11,7 @@
 				        <img class="img-rounded" src="${pageContext.request.contextPath}/resources/img/product/${lot.img}.png" alt="...">
 			      	</c:if>
 			    <security:authorize access="hasRole('ROLE_REGULAR_USER')">
-					<c:if test="${!productExist}">
+					<c:if test="${lot.inStock}">
 						  <a id = "lot_${lot.id}" href="#" class="btn btn-success btn-lg buy_btn" onclick="send(${lot.id})"><span class = "glyphicon glyphicon-shopping-cart"></span> Buy </a>
 					</c:if>
 				</security:authorize>

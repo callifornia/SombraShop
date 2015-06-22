@@ -7,6 +7,7 @@
 	<title><tiles:insertAttribute name="title" /></title>
 	<script type="text/javascript" src="<c:url value='/resources/js/jquery.js' />"></script>
 	<script type="text/javascript" src="<c:url value='/resources/js/main.js' />"></script>
+	<link rel="icon" href="<c:url value='/resources/img/321.ico' />">
 	
 	<link rel="stylesheet" href="<c:url value='/resources/css/style.css' />">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">

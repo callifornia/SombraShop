@@ -2,9 +2,6 @@ $(document).ready(function(){
 	$('#show').delay(5000).fadeOut(800);
 	var app = new Application();
 	app.loadMenu();
-	var referrer = document.referrer;
-
-	
 	$("#checkout").click(function(){
 		alert("Send to the db");
 	});
@@ -13,7 +10,7 @@ $(document).ready(function(){
 
 function send(data){
 	
-	var url = "http://" + $(location).attr('host') + "/sombra/json/addToCart/" + data;
+	var url = "http://" + $(location).attr('host') + "/store/json/addToCart/" + data;
 	$.getJSON(url);
 	hideElem(data);
 };
@@ -23,7 +20,7 @@ function hideElem(data){
 }
 
 function rem(data){	
-	var url = "http://" + $(location).attr('host') + "/sombra/json/remove/" + data;
+	var url = "http://" + $(location).attr('host') + "/store/json/remove/" + data;
 	$.getJSON(url, function(json){
 		if(json == 0){
 			location.reload();
@@ -35,8 +32,8 @@ function rem(data){
 
 function Application(){
 	this.loadMenu = function(){
-		var url = "http://" + $(location).attr('host') + "/sombra/json/tree";	
-		var urlMenu = "http://" + $(location).attr('host') + "/sombra/category/";
+		var url = "http://" + $(location).attr('host') + "/store/json/tree";	
+		var urlMenu = "http://" + $(location).attr('host') + "/store/category/";
 		$.getJSON(url, function(json){
 			var data = json;			
 			function parseMenu(ul, menu) {

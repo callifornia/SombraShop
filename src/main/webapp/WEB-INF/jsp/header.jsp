@@ -2,13 +2,13 @@
 <%@ include file="library.jsp"%>
 <div class="navbar">
       <div class="container">
-          <div class = "col-md-5 header_left_side">
+          <div class = "col-md-3 header_left_side">
           <a  href="${pageContext.request.contextPath}">
           	<img alt="logo" id = "logo" src="${pageContext.request.contextPath}/resources/img/logo.png">
           </a>
-          	<p class = "logo_title">Sombra</p>
+          	<!-- <p class = "logo_title">Sombra</p> -->
           </div>
-           <div class = "col-md-4 search_form">    
+           <div class = "col-md-6 search_form">    
 	           <form:form role="search" name="searchForm" action="${pageContext.request.contextPath}/search" method="POST" modelAttribute="search">
 			   	 <div class="col-md-12">
 				 	<div class="input-group">
