@@ -11,4 +11,4 @@ controller - include controllers wich geting client request (POST/GET). Also thi
 
 service - contain all available operation in this web app
 
-dao - include methods to work with data base
+dao - include methods to work with data base. If you wanna download and run this app on your pc you just need change dbconfig.properties in src.main.resources
